@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { BiRightArrow } from "react-icons/bi";
+import ToggleListIcon from "./ToggleListIcon";
 
-interface NavLink {
+export interface NavLink {
   name: string;
   path: string;
 }
@@ -30,25 +31,34 @@ const ArrowOnHoverList = (links: NavLink[], modifiedStyle: string) => {
   });
 };
 
+const DropDownList = () => <ToggleListIcon navItems={links} />;
+
 const Navbar = () => {
   return (
     <nav className="inline-flex uppercase items-center justify-center w-full h-20 bg-zinc-900 text-white px-6 fixed top-0 outline outline-zinc-900 outline-2 outline-offset-4">
       <div className="font-black flex-auto text-lg cursor-pointer">
-        <Image src="/home/logo-death.png" alt="logo" width={150} height={150} />
+        <Image
+          className="md:w-[150px] md:h-auto w-28 h-auto"
+          src="/home/logo-death.png"
+          alt="logo"
+          width={150}
+          height={150}
+        />
       </div>
-      <div className="items-center space-x-4 hidden md:inline-flex">
+      <div className="items-center space-x-4 hidden lg:inline-flex">
         {ArrowOnHoverList(links, "")}
       </div>
+      {DropDownList()}
     </nav>
   );
 };
 
-const Menu = () => {
+const HomePageNav = () => {
   return (
-    <div className="flex flex-col items-start gap-8 justify-center w-full h-full bg-zinc-900 outline outline-offset-4 outline-2 outline-zinc-900 pl-5">
-      {ArrowOnHoverList(links, "text-3xl")}
+    <div className="lg:flex flex-col items-start gap-5 justify-center w-full h-[89%] lg:py-0 py-20 bg-zinc-900 outline outline-offset-4 outline-2 outline-zinc-900 pl-5 rounded-lg hidden">
+      {ArrowOnHoverList(links, "text-2xl")}
     </div>
   );
 };
 
-export { Navbar, Menu };
+export { Navbar, HomePageNav, ArrowOnHoverList, DropDownList };
