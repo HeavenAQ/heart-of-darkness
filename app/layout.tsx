@@ -18,7 +18,7 @@ export default function RootLayout({
   const pathname = usePathname();
   return (
     <html lang="en">
-      <body className={`${chakraPatch.className}  bg-zinc-700`}>
+      <body className={`${chakraPatch.className} text-white bg-zinc-700`}>
         {pathname !== "/" && <Navbar />}
         {children}
         <Footer />
