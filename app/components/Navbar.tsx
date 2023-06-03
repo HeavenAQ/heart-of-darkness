@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { BiRightArrow } from "react-icons/bi";
 
 interface NavLink {
@@ -11,7 +12,7 @@ const links: NavLink[] = [
   { name: "Introduction", path: "/introduction" },
   { name: "Story", path: "/story" },
   { name: "Characters", path: "/characters" },
-  { name: "Staffs", path: "/staffs" },
+  { name: "Staff", path: "/staff" },
 ];
 
 const ArrowOnHoverList = (links: NavLink[], modifiedStyle: string) => {
@@ -33,7 +34,7 @@ const Navbar = () => {
   return (
     <nav className="inline-flex uppercase items-center justify-center w-full h-20 bg-zinc-900 text-white px-6 fixed top-0 outline outline-zinc-900 outline-2 outline-offset-4">
       <div className="font-black flex-auto text-lg cursor-pointer">
-        Heart of darkness
+        <Image src="/home/logo-death.png" alt="logo" width={150} height={150} />
       </div>
       <div className="items-center space-x-4 hidden md:inline-flex">
         {ArrowOnHoverList(links, "")}
