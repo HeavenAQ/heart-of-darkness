@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="flex flex-col gap-6 uppercase items-center justify-center w-full py-4 bg-zinc-900 text-white outline outline-zinc-900 outline-offset-4 outline-2">
       <div className="inline-flex gap-1 justify-center items-center hover:text-red-600 text-zinc-900 cursor-pointer">
         <a className="text-4xl text-white" href="https://github.com/HeavenAQ">
-          <IoLogoGithub />
+          <IoLogoGithub className="hover:text-red-600" />
         </a>
       </div>
       <div className="items-center space-x-4 inline-flex text-sm md:text-lg">

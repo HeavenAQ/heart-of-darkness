@@ -29,15 +29,13 @@ const ToggleListIcon: FC<PageProps> = ({ navItems }) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 w-56 -bottom-48 divide-zinc-100 rounded-md bg-zinc-700 flex flex-col p-1 border border-zinc-600">
+        <Menu.Items className="absolute right-0 w-56 -bottom-48 divide-zinc-100 rounded-md bg-zinc-900 flex flex-col p-1 border border-zinc-600">
           <Menu.Item>
             <div className="w-full rounded-md p-1 pl-2 font-black">Content</div>
           </Menu.Item>
-          {ArrowOnHoverList(navItems, "hover:text-red-600 text-zinc-700").map(
-            (link, i) => (
-              <Menu.Item key={i}>{link}</Menu.Item>
-            )
-          )}
+          {ArrowOnHoverList(navItems, "").map((link, i) => (
+            <Menu.Item key={i}>{link}</Menu.Item>
+          ))}
         </Menu.Items>
       </Transition>
     </Menu>
