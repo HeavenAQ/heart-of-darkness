@@ -1,8 +1,9 @@
 import React from "react";
+import ContentBox from "../components/ContentBox";
 
 export default function Introduction() {
   return (
-    <div className="h-full w-full outline outline-offset-4 bg-zinc-900 outline-zinc-900 text-justify rounded-md text-md p-9 leading-10 mb-20 md:text-2xl md:p-14 md:leading-[50px]">
+    <ContentBox>
       <p>
         Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
         cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, officia
@@ -17,6 +18,6 @@ export default function Introduction() {
         duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
         consectetur et est culpa et culpa duis.
       </p>
-    </div>
+    </ContentBox>
   );
 }

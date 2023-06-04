@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import { usePathname } from "next/navigation";
 import { FC } from "react";
 import MainContent from "./components/MainContent";
-import { NavLink, links } from "./components/routes";
+import { NavLink, links } from "./components/data/routes";
 
 const chakraPatch = Chakra_Petch({
   weight: ["300", "400", "700", "500", "600"],
@@ -26,7 +26,11 @@ const RootLayout: FC<PageProps> = ({ children }) => {
     <html lang="en">
       <body className={`${chakraPatch.className} text-white bg-zinc-700`}>
         {pathname !== "/" && <Navbar />}
-        <MainContent title={currentRoute.name}>{children}</MainContent>
+        {pathname !== "/" ? (
+          <MainContent title={currentRoute.name}>{children}</MainContent>
+        ) : (
+          children
+        )}
         <Footer />
       </body>
     </html>

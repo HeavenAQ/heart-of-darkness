@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { BiRightArrow } from "react-icons/bi";
 import ToggleListIcon from "./ToggleListIcon";
-import { NavLink, links } from "./routes";
+import { NavLink, links } from "./data/routes";
 
 const ArrowOnHoverList = (links: NavLink[], modifiedStyle: string) => {
   return links.map((link, i) => {
@@ -23,7 +23,7 @@ const DropDownList = () => <ToggleListIcon navItems={links} />;
 
 const Navbar = () => {
   return (
-    <nav className="inline-flex uppercase items-center justify-center w-full h-20 bg-zinc-900 text-white px-6 fixed top-0 outline outline-zinc-900 outline-2 outline-offset-4">
+    <nav className="inline-flex uppercase items-center justify-center w-full h-20 bg-zinc-900 text-white px-6 fixed top-0 outline outline-zinc-900 outline-2 outline-offset-4 z-10">
       <div className="font-black flex-auto text-lg cursor-pointer">
         <Image
           className="md:w-[150px] md:h-auto w-28 h-auto"
@@ -31,6 +31,7 @@ const Navbar = () => {
           alt="logo"
           width={150}
           height={150}
+          priority={true}
         />
       </div>
       <div className="items-center space-x-4 hidden lg:inline-flex">

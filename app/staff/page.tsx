@@ -19,7 +19,7 @@ export default function Staff() {
         return (
           <div
             key={i}
-            className="inline-grid grid-cols-5 letter md:text-3xl w-full text-center sm:text-2xl text-md"
+            className="inline-grid grid-cols-5 letter xl:text-3xl md:text-2xl w-full text-center sm:text-xl text-md"
           >
             <div className="lg:col-start-2 lg:col-end-2 col-start-1 col-end-3 text-left font-black underline underline-offset-4 uppercase">
               {student.position}
