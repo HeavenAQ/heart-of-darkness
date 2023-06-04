@@ -2,19 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { BiRightArrow } from "react-icons/bi";
 import ToggleListIcon from "./ToggleListIcon";
-
-export interface NavLink {
-  name: string;
-  path: string;
-}
-
-const links: NavLink[] = [
-  { name: "Home", path: "/" },
-  { name: "Introduction", path: "/introduction" },
-  { name: "Story", path: "/story" },
-  { name: "Characters", path: "/characters" },
-  { name: "Staff", path: "/staff" },
-];
+import { NavLink, links } from "./routes";
 
 const ArrowOnHoverList = (links: NavLink[], modifiedStyle: string) => {
   return links.map((link, i) => {

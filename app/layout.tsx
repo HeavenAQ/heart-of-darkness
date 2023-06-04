@@ -4,25 +4,33 @@ import { Chakra_Petch } from "next/font/google";
 import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
 import { usePathname } from "next/navigation";
+import { FC } from "react";
+import MainContent from "./components/MainContent";
+import { NavLink, links } from "./components/routes";
 
 const chakraPatch = Chakra_Petch({
   weight: ["300", "400", "700", "500", "600"],
   subsets: ["latin"],
 });
 
-export default function RootLayout({
-  children,
-}: {
+interface PageProps {
   children: React.ReactNode;
-}) {
+}
+
+const RootLayout: FC<PageProps> = ({ children }) => {
   const pathname = usePathname();
+  const currentRoute = links.find(
+    (link) => "" + link.path === pathname
+  ) as NavLink;
   return (
     <html lang="en">
       <body className={`${chakraPatch.className} text-white bg-zinc-700`}>
         {pathname !== "/" && <Navbar />}
-        {children}
+        <MainContent title={currentRoute.name}>{children}</MainContent>
         <Footer />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
