@@ -9,7 +9,7 @@ const EpisodeNumberBalls = (currentEpisode: EpisodeElement) => {
     const lightOnStyle = ["bg-gradient-to-br", "from-zinc-800", "to-red-600"];
     const defaultSelected = i === 0 ? lightOnStyle.join(" ") : "";
     return (
-      <div key={i} className="ml-5">
+      <div key={i} className={`ml-5 ${(i + 1) % 2 === 0 ? "snap-center" : ""}`}>
         <button
           className={`md:w-16 md:h-16 flex justify-center items-center rounded-full text-white text-center leading-10 md:text-2xl bg-zinc-700 cursor-pointer border-red-700 border-2 hover:bg-gradient-to-br hover:from-zinc-800 hover:to-red-600 h-12 w-12 text-l ${defaultSelected} mr-5`}
           ref={i === 0 ? currentEpisode.ref : null}
@@ -111,7 +111,20 @@ export default function StoryPage() {
 
   return (
     <>
-      <div className="w-9/12 h-16 inline-flex overflow-x-scroll justify-start">
+      <div
+        className="w-10/12 h-16 inline-flex overflow-x-scroll justify-start no-scrollbar snap-x xl:justify-evenly ml-4"
+        onMouseEnter={(_) => (document.body.style.overflow = "hidden")}
+        onMouseLeave={(_) => (document.body.style.overflow = "auto")}
+        onWheel={(e) => {
+          const container = e.currentTarget;
+          const scrollLeft = e.deltaY;
+          container.scrollTo({
+            top: 0,
+            left: container.scrollLeft + scrollLeft,
+            behavior: "smooth",
+          });
+        }}
+      >
         {EpisodeNumberBalls(currentEpisode)}
       </div>
       <ContentBox>
@@ -134,7 +147,7 @@ export default function StoryPage() {
               {Thumbnails(currentEpisode, thumbnailInfo)}
             </div>
           </div>
-          <div className="">
+          <div className="w-10/12">
             <p className="text-justify lg:text-2xl md:text-xl text-[14px]">
               {currentEpisode.episode.description}
             </p>
