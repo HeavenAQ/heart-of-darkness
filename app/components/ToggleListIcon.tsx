@@ -2,7 +2,8 @@
 import { FC, Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { NavLink, ArrowOnHoverList } from "./Navbar";
+import { NavLink } from "./data/routes";
+import { ArrowOnHoverList } from "./Navbar";
 
 interface PageProps {
   navItems: NavLink[];

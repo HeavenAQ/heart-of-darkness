@@ -9,9 +9,9 @@ const EpisodeNumberBalls = (currentEpisode: EpisodeElement) => {
     const lightOnStyle = ["bg-gradient-to-br", "from-zinc-800", "to-red-600"];
     const defaultSelected = i === 0 ? lightOnStyle.join(" ") : "";
     return (
-      <div key={i} className="inline-flex">
+      <div key={i} className="ml-5">
         <button
-          className={`md:w-16 md:h-16 flex justify-center items-center rounded-full text-white text-center leading-10 md:text-2xl bg-zinc-700 cursor-pointer border-red-700 border-2 hover:bg-gradient-to-br hover:from-zinc-800 hover:to-red-600 h-12 w-12 text-l ${defaultSelected}`}
+          className={`md:w-16 md:h-16 flex justify-center items-center rounded-full text-white text-center leading-10 md:text-2xl bg-zinc-700 cursor-pointer border-red-700 border-2 hover:bg-gradient-to-br hover:from-zinc-800 hover:to-red-600 h-12 w-12 text-l ${defaultSelected} mr-5`}
           ref={i === 0 ? currentEpisode.ref : null}
           onClick={(e) => {
             currentEpisode.ref.current?.classList.remove(...lightOnStyle);
@@ -43,7 +43,7 @@ const Thumbnails = (
       "before:to-red-600",
       "before:w-full",
       "before:h-full",
-      "before:z-10",
+      "before:z-9",
       "before:content-['SELECTED']",
       "before:flex",
       "before:justify-center",
@@ -111,22 +111,21 @@ export default function StoryPage() {
 
   return (
     <>
-      <div className="w-full h-30 block text-center space-x-5 space-y-5">
+      <div className="w-9/12 h-16 inline-flex overflow-x-scroll justify-start">
         {EpisodeNumberBalls(currentEpisode)}
       </div>
       <ContentBox>
         <div className="mx-auto flex flex-col items-center justify-center gap-14">
-          <h1 className="text-center lg:text-2xl md:text-xl text-l font-semibold space-y-6">
-            <span>{`Episode ${currentEpisode.episode.id}`}</span>
-            <br />
-            <span className="text-center lg:text-4xl md:text-3xl text-2xl font-black">
+          <div>
+            <h2 className="text-center lg:text-3xl md:text-2xl text-xl mb-5">{`Part ${currentEpisode.episode.id}`}</h2>
+            <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-black">
               {currentEpisode.episode.title}
-            </span>
-          </h1>
+            </h1>
+          </div>
           <div className="mx-auto flex flex-col items-center justify-center gap-6">
             <Image
-              width={1000}
-              height={1000}
+              width={1594}
+              height={1132}
               src={currentEpisode.episode.images[selectedThumbnailIdx]}
               alt="episode image1"
               className="rounded-lg"
@@ -136,7 +135,7 @@ export default function StoryPage() {
             </div>
           </div>
           <div className="">
-            <p className="text-justify lg:text-2xl md:text-xl text-l font-semibold">
+            <p className="text-justify lg:text-2xl md:text-xl text-[14px]">
               {currentEpisode.episode.description}
             </p>
           </div>

@@ -14,7 +14,7 @@ export default function Staff() {
     { name: "Roger", position: "Designer", id: "B081020041" },
   ];
   return (
-    <div className="flex flex-col items-center justify-center w-full gap-8 md:gap-10 px-10">
+    <div className="flex flex-col items-center justify-center w-full gap-8 md:gap-10 md:px-10">
       {students.map((student, i) => {
         return (
           <div

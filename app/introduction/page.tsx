@@ -5,18 +5,16 @@ export default function Introduction() {
   return (
     <ContentBox>
       <p>
-        Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-        cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, officia
-        excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem
-        pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur
-        officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet
-        voluptate voluptate dolor minim nulla est proident. Nostrud officia
-        pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat
-        reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia
-        voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem
-        sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur
-        duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
-        consectetur et est culpa et culpa duis.
+        {`In the fading sunset, five men aboard the Nellie recount tales. Marlow,
+        their storyteller, weaves a tale about his haunting journey into the
+        heart of colonial Africa. He shares his unsettling experiences working
+        for the Belgian "Company," the eerie city of the Company's headquarters,
+        the arduous travel to Congo, and the ill-famed agent Kurtz. The
+        narrative explores the complex realities of imperialism, the violence
+        inflicted upon the natives, and the self-destructive obsession for
+        power. As Kurtz's last words, "The horror! The horror!" resonate,
+        Marlow's story plunges them into an abyss, bridging the serene Thames
+        and the primal Congo...`}
       </p>
     </ContentBox>
   );
